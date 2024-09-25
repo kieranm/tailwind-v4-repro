@@ -1,0 +1,90 @@
+@config "../../tailwind.config.ts";
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+@import "./colors.css";
+@import "./theme.css";
+@import "./cropper.css";
+
+/*
+---------------
+Main Style File
+---------------
+
+⛔️ New styles should very rarely be added here. This stylesheet is mainly
+to configure Tailwind, and to apply global styles where it would be impractical
+to use Tailwind. Instead, use inline styles or Tailwind custom classes.
+*/
+
+/* Global focus ring style */
+*:focus {
+  @apply outline-none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  /* Add anti-aliasing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Prevent the page from scrolling beyond the edges */
+  overscroll-behavior: none;
+
+  /* Reset the default font weight */
+  font-weight: 500;
+
+  /* Set a default font size */
+  font-size: 16px;
+
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+body[style*="pointer-events: none"] main * {
+  /* Since calendar events make extensive use of pointer-events: auto,
+  ensure this is overridden when Radix makes the document inert */
+  pointer-events: none !important;
+}
+
+#__next,
+#root {
+  height: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(var(--color-low-contrast));
+  opacity: 1; /* Firefox */
+}
+
+.no-scrollbars {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.no-scrollbars::-webkit-scrollbar {
+  width: 1px;
+}
+
+.no-scrollbars::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.no-scrollbars::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.no-scrollbars::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Apple Maps */
+.mk-logo {
+  display: none !important;
+}
+.mk-legal {
+  display: none !important;
+}

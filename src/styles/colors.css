@@ -1,0 +1,230 @@
+/* Use neutral values on the root element */
+:root {
+  --hue: 220;
+  --chroma-multiplier: 0.001;
+}
+
+/* --chroma-multiplier needs to be recomputed every time
+a new theme is encountered, hence this whole list of variables */
+:root, .neutral, .brand, .state, .adaptive {
+  /* Base shades */
+  --shade-0: 100% calc(0 * var(--chroma-multiplier, 1));
+  --shade-1: 99.27% calc(0.003 * var(--chroma-multiplier, 1));
+  --shade-2: 98.5% calc(0.007 * var(--chroma-multiplier, 1));
+  --shade-3: 96.94% calc(0.015 * var(--chroma-multiplier, 1));
+  --shade-4: 93.89% calc(0.031 * var(--chroma-multiplier, 1));
+  --shade-5: 88.22% calc(0.062 * var(--chroma-multiplier, 1));
+  --shade-6: 78.71% calc(0.116 * var(--chroma-multiplier, 1));
+  --shade-7: 65.18% calc(0.148 * var(--chroma-multiplier, 1));
+  --shade-8: 53.43% calc(0.121 * var(--chroma-multiplier, 1));
+  --shade-9: 45.57% calc(0.103 * var(--chroma-multiplier, 1));
+  --shade-10: 38.51% calc(0.087 * var(--chroma-multiplier, 1));
+  --shade-11: 32.55% calc(0.074 * var(--chroma-multiplier, 1));
+  --shade-12: 27.79% calc(0.063 * var(--chroma-multiplier, 1));
+  --shade-13: 24.15% calc(0.055 * var(--chroma-multiplier, 1));
+  --shade-14: 21.45% calc(0.048 * var(--chroma-multiplier, 1));
+  --shade-15: 0% calc(0 * var(--chroma-multiplier, 1));
+}
+
+.brand {
+  --hue: 280;
+  --chroma-multiplier: 1.1;
+}
+
+.state {
+  --chroma-multiplier: 1.25;
+}
+
+.state.error {
+  --hue: 22;
+}
+.state.warning {
+  --hue: 55;
+}
+.state.success {
+  --hue: 150;
+}
+.state.info {
+  --hue: 220;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* Neutral Semantic Shades */
+body, .neutral {
+  --primary: var(--shade-7) var(--hue) / 1;
+  --on-primary: var(--shade-0) var(--hue) / 1;
+
+  --background: var(--shade-2) var(--hue) / 1;
+  --surface: var(--shade-1) var(--hue) / 1;
+  --elevated: var(--shade-0) var(--hue) / 1;
+  --surface-transparent: var(--shade-1) var(--hue) / 0;
+
+  /* Frosted surfaces */
+  --background-frosted: var(--shade-2) var(--hue) / 0.8;
+
+  /* Text */
+  --text-high-contrast: var(--shade-13) var(--hue) / 1;
+  --text: var(--shade-8) var(--hue) / 1;
+  --text-low-contrast: var(--shade-8) var(--hue) / 0.5;
+
+  /* Icons */
+  --icon-high-contrast: var(--shade-8) var(--hue) / 1;
+  --icon: var(--shade-7) var(--hue) / 1;
+  --icon-low-contrast: var(--shade-7) var(--hue) / 0.5;
+
+  /* Objects */
+  --object-highlight: var(--shade-4) var(--hue) / 1;
+  --object: var(--shade-5) var(--hue) / 1;
+  --object-inner-shadow-start: var(--shade-8) var(--hue) / 0.3;
+  --object-inner-shadow-end: var(--shade-8) var(--hue) / 0.6;
+  --object-inner-highlight-start: var(--shade-1) var(--hue) / 0.6;
+  --object-inner-highlight-end: var(--shade-1) var(--hue) / 0.3;
+
+  /* Tints */
+  --tint-extra-heavy: var(--shade-8) var(--hue) / 0.16;
+  --tint-heavy: var(--shade-8) var(--hue) / 0.12;
+  --tint: var(--shade-8) var(--hue) / 0.08;
+  --tint-light: var(--shade-8) var(--hue) / 0.04;
+  --tint-extra-light: var(--shade-8) var(--hue) / 0.02;
+  --tint-transparent: var(--shade-8) var(--hue) / 0;
+
+  /* Shadows */
+  --shadow: var(--shade-10) var(--hue) / 0.08;
+  --shadow-light: var(--shade-10) var(--hue) / 0.04;
+  --shadow-transparent: var(--shade-10) var(--hue) / 0;
+}
+.dark, .dark .neutral {
+  --primary: var(--shade-7) var(--hue) / 1;
+  --on-primary: var(--shade-0) var(--hue) / 1;
+
+  --background: var(--shade-14) var(--hue) / 1;
+  --surface: var(--shade-13) var(--hue) / 1;
+  --elevated: var(--shade-12) var(--hue) / 1;
+  --surface-transparent: var(--shade-13) var(--hue) / 0;
+
+  /* Frosted surfaces */
+  --background-frosted: var(--shade-14) var(--hue) / 0.8;
+
+  /* Text */
+  --text-high-contrast: var(--shade-1) var(--hue) / 1;
+  --text: var(--shade-6) var(--hue) / 1;
+  --text-low-contrast: var(--shade-6) var(--hue) / 0.5;
+
+  /* Icons */
+  --icon-high-contrast: var(--shade-4) var(--hue) / 1;
+  --icon: var(--shade-7) var(--hue) / 1;
+  --icon-low-contrast: var(--shade-7) var(--hue) / 0.5;
+
+  /* Objects */
+  --object-highlight: var(--shade-7) var(--hue) / 1;
+  --object: var(--shade-8) var(--hue) / 1;
+  --object-inner-shadow-start: var(--shade-1) var(--hue) / 0.5;
+  --object-inner-shadow-end: var(--shade-1) var(--hue) / 0.2;
+  --object-inner-highlight-start: var(--shade-0) var(--hue) / 0;
+  --object-inner-highlight-end: var(--shade-0) var(--hue) / 0;
+
+  /* Tints */
+  --tint-extra-heavy: var(--shade-1) var(--hue) / 0.16;
+  --tint-heavy: var(--shade-1) var(--hue) / 0.12;
+  --tint: var(--shade-1) var(--hue) / 0.08;
+  --tint-light: var(--shade-1) var(--hue) / 0.04;
+  --tint-extra-light: var(--shade-1) var(--hue) / 0.02;
+  --tint-transparent: var(--shade-1) var(--hue) / 0;
+
+  /* Shadows */
+  --shadow: var(--shade-15) var(--hue) / 0.32;
+  --shadow-light: var(--shade-15) var(--hue) / 0.24;
+  --shadow-transparent: var(--shade-15) var(--hue) / 0;
+}
+
+.brand, .state, .adaptive {
+  --primary: var(--shade-7) var(--hue) / 1;
+  --on-primary: var(--shade-0) var(--hue) / 1;
+
+  --background: var(--shade-4) var(--hue) / 1;
+  --surface: var(--shade-3) var(--hue) / 1;
+  --elevated: var(--shade-2) var(--hue) / 1;
+  --surface-transparent: var(--shade-3) var(--hue) / 0;
+
+  /* Frosted surfaces */
+  --background-frosted: var(--shade-4) var(--hue) / 0.8;
+
+  /* Text */
+  --text-high-contrast: var(--shade-9) var(--hue) / 1;
+  --text: var(--shade-8) var(--hue) / 1;
+  --text-low-contrast: var(--shade-8) var(--hue) / 0.5;
+
+  /* Icons */
+  --icon-high-contrast: var(--shade-8) var(--hue) / 1;
+  --icon: var(--shade-7) var(--hue) / 1;
+  --icon-low-contrast: var(--shade-7) var(--hue) / 0.5;
+
+  /* Objects */
+  --object-highlight: var(--shade-4) var(--hue) / 1;
+  --object: var(--shade-5) var(--hue) / 1;
+  --object-inner-shadow-start: var(--shade-8) var(--hue) / 0.3;
+  --object-inner-shadow-end: var(--shade-8) var(--hue) / 0.6;
+  --object-inner-highlight-start: var(--shade-1) var(--hue) / 0.6;
+  --object-inner-highlight-end: var(--shade-1) var(--hue) / 0.3;
+
+  /* Tints */
+  --tint-extra-heavy: var(--shade-8) var(--hue) / 0.2;
+  --tint-heavy: var(--shade-8) var(--hue) / 0.15;
+  --tint: var(--shade-8) var(--hue) / 0.1;
+  --tint-light: var(--shade-8) var(--hue) / 0.05;
+  --tint-extra-light: var(--shade-8) var(--hue) / 0.03;
+  --tint-transparent: var(--shade-8) var(--hue) / 0;
+
+  /* Shadows */
+  --shadow: var(--shade-7) var(--hue) / 0.16;
+  --shadow-light: var(--shade-7) var(--hue) / 0.12;
+  --shadow-transparent: var(--shade-7) var(--hue) / 0;
+}
+
+.dark .brand, .dark .state, .dark .adaptive {
+  --primary: var(--shade-7) var(--hue) / 1;
+  --on-primary: var(--shade-0) var(--hue) / 1;
+
+  --background: var(--shade-12) var(--hue) / 1;
+  --surface: var(--shade-11) var(--hue) / 1;
+  --elevated: var(--shade-10) var(--hue) / 1;
+  --surface-transparent: var(--shade-11) var(--hue) / 0;
+
+  /* Frosted surfaces */
+  --background-frosted: var(--shade-12) var(--hue) / 0.8;
+
+  /* Text */
+  --text-high-contrast: var(--shade-3) var(--hue) / 1;
+  --text: var(--shade-5) var(--hue) / 1;
+  --text-low-contrast: var(--shade-5) var(--hue) / 0.5;
+
+  /* Icons */
+  --icon-high-contrast: var(--shade-5) var(--hue) / 1;
+  --icon: var(--shade-7) var(--hue) / 1;
+  --icon-low-contrast: var(--shade-7) var(--hue) / 0.5;
+
+  /* Objects */
+  --object-highlight: var(--shade-7) var(--hue) / 1;
+  --object: var(--shade-8) var(--hue) / 1;
+  --object-inner-shadow-start: var(--shade-1) var(--hue) / 0.5;
+  --object-inner-shadow-end: var(--shade-1) var(--hue) / 0.2;
+  --object-inner-highlight-start: var(--shade-0) var(--hue) / 0;
+  --object-inner-highlight-end: var(--shade-0) var(--hue) / 0;
+
+  /* Tints */
+  --tint-extra-heavy: var(--shade-2) var(--hue) / 0.2;
+  --tint-heavy: var(--shade-2) var(--hue) / 0.15;
+  --tint: var(--shade-2) var(--hue) / 0.1;
+  --tint-light: var(--shade-2) var(--hue) / 0.05;
+  --tint-extra-light: var(--shade-2) var(--hue) / 0.03;
+  --tint-transparent: var(--shade-2) var(--hue) / 0;
+
+  /* Shadows */
+  --shadow: var(--shade-10) var(--hue) / 0.32;
+  --shadow-light: var(--shade-10) var(--hue) / 0.24;
+  --shadow-transparent: var(--shade-10) var(--hue) / 0;
+}
